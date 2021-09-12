@@ -1,0 +1,13 @@
+<html lang = 'en'>
+<body style = "background-colour: grey;" >
+<h1>Counting Collectibles Gameshop</h1>
+<br>
+<a href="{{ url_for('home') }}">Home</a>
+<a href="{{ url_for('update_Game') }}">Update a game</a>
+<a href="{{ url_for('Add_game') }}">Add a game</a>
+<a href="{{ url_for('Add_store') }}">Add a store</a>
+<a href="{{ url_for('Add_staff') }}">Add a staff member</a>
+{% block body %}
+{% endblock body %}
+</head>
+</html>
