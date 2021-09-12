@@ -41,3 +41,14 @@ def add_staff():
         db.session.commit()
         return redirect(url_for('add_SF'))
     return render_template('Add_staff.html', form=form)
+
+@app.route('/update-Game/<int:G-id>', methods=['GET','POST'])
+def update_Game(G_id):
+    form = UpdateGame()
+    if request.method == 'POST':
+        Game_name = form.G_name.data
+        game = Games.query.filter_by(id=G_id).first()
+        game.game = Game_name
+        db.session.commit()
+        return redirect(url_for('home'))
+    return render_template('update_Game.html', form=form)
